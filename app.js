@@ -5,12 +5,11 @@ const {telegram_token} = process.env;
 
 const bot = new TelegramBot(telegram_token, {polling: true});
 
-bot.onText(/\/echo (.+)/, (msg, match) => {
+bot.onText(/\/start/, (msg) => {
 
   const chatId = msg.chat.id;
-  const resp = match[1]; 
 
-  bot.sendMessage(chatId, resp);
+  bot.sendMessage(chatId, "salam khosh amadid");
 });
 
 bot.on('message', (msg) => {
